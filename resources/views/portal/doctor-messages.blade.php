@@ -1,0 +1,6 @@
+@extends('portal.layout')
+@section('title', 'Patient Messages')
+@section('content')
+<header class="portal-header"><div><span class="portal-eyebrow">Doctor workspace</span><h1>Patient messages</h1><p>Reply to messages sent directly to you by your patients.</p></div></header>
+<section class="portal-panel"><div class="portal-panel-heading"><div><h2>Messages</h2></div></div>@forelse ($messages as $message)<article class="portal-message"><span class="portal-eyebrow">{{ $message->patient->name ?? 'Patient' }} · {{ $message->patient->email ?? '' }}</span><h3>{{ $message->subject ?: 'Message' }}</h3><p>{{ $message->message }}</p>@if ($message->reply)<div class="portal-message-reply"><strong>Your reply</strong><p>{{ $message->reply }}</p></div>@endif<form method="POST" action="{{ route('doctor.messages.reply', $message) }}" class="portal-inline-form">@csrf<textarea name="reply" placeholder="Reply to the patient" required></textarea><button class="portal-button" type="submit">{{ $message->reply ? 'Update reply' : 'Reply' }}</button></form></article>@empty<div class="portal-empty"><i class="fas fa-comments"></i><p>No patient messages yet.</p></div>@endforelse<div style="margin-top:18px">{{ $messages->links() }}</div></section>
+@endsection

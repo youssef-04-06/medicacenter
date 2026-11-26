@@ -1,0 +1,6 @@
+@extends('portal.layout')
+@section('title', 'Doctor Payments')
+@section('content')
+<header class="portal-header"><div><span class="portal-eyebrow">Doctor workspace</span><h1>Payments</h1><p>Review payment references for your assigned telemedicine patients.</p></div></header>
+<section class="portal-panel"><div class="portal-panel-heading"><div><h2>Assigned payments</h2><p>Payment verification is managed by the admin team.</p></div></div><div class="portal-table-wrap"><table class="portal-table"><thead><tr><th>Patient</th><th>Method</th><th>Reference</th><th>Amount</th><th>Status</th></tr></thead><tbody>@forelse ($payments as $payment)<tr><td>{{ $payment->patient->name ?? $payment->appointment->name }}<small>{{ $payment->patient->email ?? $payment->appointment->email }}</small></td><td>{{ ucfirst($payment->payment_method) }}</td><td>{{ $payment->reference ?: 'Not provided' }}</td><td>${{ number_format((float) $payment->amount, 2) }}</td><td><span class="portal-badge {{ $payment->status === 'verified' ? 'completed' : ($payment->status === 'rejected' ? 'rejected' : 'pending') }}">{{ $payment->status }}</span></td></tr>@empty<tr><td colspan="5"><div class="portal-empty"><i class="fas fa-wallet"></i><p>No assigned payments yet.</p></div></td></tr>@endforelse</tbody></table></div><div style="margin-top:18px">{{ $payments->links() }}</div></section>
+@endsection

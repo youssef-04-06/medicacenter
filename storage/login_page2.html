@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="0fMdeQOyVNtRWz4jilFmzsWuxythYsOvnkeIkFP3">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8000/css/stylehome.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-DsANUlyX.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-CtvxTQIP.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-DsANUlyX.css" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-CtvxTQIP.js"></script>    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="http://127.0.0.1:8000">
+            <svg width="45" height="45" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="me-3">
+                <path d="M32 4 L12 16 V36 C12 50 32 60 32 60 C32 60 52 50 52 36 V16 Z" fill="#00b4d8" />
+                <path d="M32 20 v16 M24 28 h16" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+            </svg>
+            <span class="fw-bold navbar-title">MedicaCenter</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-5 mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom active" href="http://127.0.0.1:8000"><i class="fas fa-home me-2"></i>Home</a>
+                </li>
+                <li class="nav-item ms-4">
+                    <a class="nav-link nav-link-custom" href="http://127.0.0.1:8000/services"><i class="fas fa-hospital me-2"></i>Services</a>
+                </li>
+                <li class="nav-item ms-4">
+                    <a class="nav-link nav-link-custom" href="http://127.0.0.1:8000/contactz"><i class="fas fa-envelope me-2"></i>Contactz</a>
+                </li>
+            </ul>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <form class="d-flex" role="search">
+                    <input class="form-control search-input" type="search" placeholder="Search services..." aria-label="Search">
+                    <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                                    <a class="nav-link nav-link-login" href="http://127.0.0.1:8000/login"><i class="fas fa-sign-in-alt me-2"></i>Login</a>
+                    <a class="btn btn-register" href="http://127.0.0.1:8000/register"><i class="fas fa-user-plus me-2"></i>Register</a>
+                                <div class="d-flex ms-3 social-icons-nav">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <!-- Page Heading -->
+            
+            <!-- Page Content -->
+            <main>
+                                <section class="hero" style="min-height:60vh;padding:60px 20px;">
+    <div class="hero-content">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5">
+                <div class="hero-card p-4">
+                    <div class="text-center mb-3">
+                        <h1 class="h3 fw-bold text-white">Welcome Back</h1>
+                        <p class="text-white-50">Log in to access your MedicaCenter account.</p>
+                    </div>
+
+                    
+                    <form method="POST" action="http://127.0.0.1:8000/login">
+                        <input type="hidden" name="_token" value="0fMdeQOyVNtRWz4jilFmzsWuxythYsOvnkeIkFP3" autocomplete="off">
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-white">Email</label>
+                            <input id="email" class="form-control" type="email" name="email" value="" required autofocus>
+                                                    </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label text-white">Password</label>
+                            <input id="password" class="form-control" type="password" name="password" required>
+                                                    </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input id="remember_me" type="checkbox" class="form-check-input" name="remember">
+                                <label class="form-check-label text-white" for="remember_me">Remember me</label>
+                            </div>
+                                                    </div>
+
+                        <button type="submit" class="btn btn-white w-100">Log in</button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <p class="mb-0 text-white-50">Don’t have an account? <a href="http://127.0.0.1:8000/register" class="text-white fw-bold">Register now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>if (typeof AOS !== 'undefined') { AOS.init(); }</script>
+    </body>
+</html>
